@@ -1,4 +1,7 @@
+// pkg main
 package main
+
+import "github.com/YoungGoofy/wb_l2/develop/dev02/unpack"
 
 /*
 === Задача на распаковку ===
@@ -19,5 +22,5 @@ package main
 */
 
 func main() {
-
+	_, _ = unpack.Unpack("a10df5cvs1")
 }

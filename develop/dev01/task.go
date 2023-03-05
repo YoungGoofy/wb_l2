@@ -1,4 +1,7 @@
+// package main
 package main
+
+import "github.com/YoungGoofy/wb_l2/develop/dev01/ntp"
 
 /*
 === Базовая задача ===
@@ -13,5 +16,5 @@ package main
 */
 
 func main() {
-
+	ntp.Run()
 }
