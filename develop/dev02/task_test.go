@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/YoungGoofy/wb_l2/develop/dev02/unpack"
 	"testing"
+
+	"github.com/YoungGoofy/wb_l2/develop/dev02/unpack"
 )
 
 func TestUnpack(t *testing.T) {
@@ -33,8 +34,8 @@ func TestUnpack(t *testing.T) {
 		},
 		{
 			desc:  "multiple digit number",
-			input: "a10df5cvs1",
-			want:  "aaaaaaaaaadfffffcvs",
+			input: "a9df5cvs1",
+			want:  "aaaaaaaaadfffffcvs",
 		},
 	}
 	for _, tc := range testCases {

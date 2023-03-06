@@ -1,7 +1,11 @@
 // pkg main
 package main
 
-import "github.com/YoungGoofy/wb_l2/develop/dev02/unpack"
+import (
+	"fmt"
+
+	"github.com/YoungGoofy/wb_l2/develop/dev02/unpack"
+)
 
 /*
 === Задача на распаковку ===
@@ -22,5 +26,6 @@ import "github.com/YoungGoofy/wb_l2/develop/dev02/unpack"
 */
 
 func main() {
-	_, _ = unpack.Unpack("a10df5cvs1")
+	res, _ := unpack.Unpack("abcd")
+	fmt.Println(res)
 }
