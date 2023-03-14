@@ -1,5 +1,7 @@
 package main
 
+import "github.com/YoungGoofy/wb_l2/develop/dev08/shell"
+
 /*
 === Взаимодействие с ОС ===
 
@@ -15,5 +17,5 @@ package main
 */
 
 func main() {
-
+	shell.Run()
 }

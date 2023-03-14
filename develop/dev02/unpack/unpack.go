@@ -37,11 +37,13 @@ func Unpack(str string) (string, error) {
 	return b.String(), nil
 }
 
+// CheckLetters check if the string is letters
 func CheckLetters(str string) bool {
 	re := regexp.MustCompile(`[a-zA-Z]+`)
 	return re.MatchString(str)
 }
 
+// CheckFirstItem check if the string is first item
 func CheckFirstItem(str string) bool {
 	re := regexp.MustCompile(`^[a-zA-Z]`)
 	return re.MatchString(str)

@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
+
 /*
 === Поиск анаграмм по словарю ===
 
@@ -20,5 +26,54 @@ package main
 */
 
 func main() {
+	words := []string{"пятак", "пятка", "тяпка", "листок", "слиток", "столик", "краска", "сакрал"}
+	anagramSets := *Anagram(&words)
+	fmt.Println(anagramSets)
+}
 
+func Anagram(slice *[]string) *map[string][]string {
+	result := make(map[string][]string)
+	*slice = deleteDuplicates(*slice)
+	for _, item := range *slice {
+		sortedItem := sortString(item)
+		_, ok := result[sortedItem]
+		if ok {
+			result[sortedItem] = append(result[sortedItem], item)
+		} else {
+			result[sortedItem] = []string{item}
+		}
+	}
+
+	for key, value := range result {
+		if len(value) == 1 {
+			delete(result, key)
+		} else {
+			sort.Strings(value)
+		}
+	}
+	return &result
+}
+
+func sortString(item string) string {
+	s := strings.Split(item, "")
+	sort.Strings(s)
+	return strings.Join(s, "")
+}
+
+func deleteDuplicates(strSlice []string) []string {
+	sort.Strings(strSlice)
+	var newSlice []string
+	for _, str := range strSlice {
+		newSlice = withoutDubles(newSlice, str)
+	}
+	return newSlice
+}
+
+func withoutDubles(str []string, item string) []string {
+	for _, s := range str {
+		if s == item {
+			return str
+		}
+	}
+	return append(str, item)
 }
