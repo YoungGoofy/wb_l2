@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/YoungGoofy/wb_l2/develop/dev09/wget"
+)
+
 /*
 === Утилита wget ===
 
@@ -9,5 +13,5 @@ package main
 */
 
 func main() {
-
+	wget.Run()
 }

@@ -1,5 +1,14 @@
 package main
 
+import (
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/YoungGoofy/wb_l2/develop/dev11/server/api"
+	"github.com/YoungGoofy/wb_l2/develop/dev11/server/event"
+)
+
 /*
 === HTTP server ===
 
@@ -23,5 +32,9 @@ package main
 */
 
 func main() {
-
+	event := event.New()
+	api := api.NewCalendarEvent(event)
+	mux := api.NewRoute()
+	fmt.Println("http://localhost:5050")
+	log.Fatal(http.ListenAndServe("localhost:5050", mux))
 }

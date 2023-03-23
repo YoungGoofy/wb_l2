@@ -1,5 +1,7 @@
 package main
 
+import "github.com/YoungGoofy/wb_l2/develop/dev05/grep"
+
 /*
 === Утилита grep ===
 
@@ -19,5 +21,5 @@ package main
 */
 
 func main() {
-
+	grep.Run()
 }
